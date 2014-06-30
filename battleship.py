@@ -31,7 +31,8 @@ def run_board(board):
 	#dummy hit everything method for first submission
 	for r in xrange(10):
 		for c in xrange(10):
-			shot_url="https://student.people.co/api/challenge/battleship/f0965ac910a1/boards/"+board["board_id"]+"/"+get_loc(r,c)
+			shot_url="https://student.people.co/api/challenge/battleship/f0965ac910a1/boards/"+board["board_id"]+"/"+get_loc(r+1,c+1)
+			print shot_url
 			response=urllib.urlopen(shot_url)
 			data=json.load(response)
 			if data["is_finished"]:
